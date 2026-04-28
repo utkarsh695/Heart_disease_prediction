@@ -63,8 +63,12 @@ def load_models():
         model = pickle.load(open("heart_model.pkl", "rb"))
         scaler = pickle.load(open("scaler.pkl", "rb"))
         return model, scaler
-    except Exception:
+        except Exception as e:
+        # This will force the actual system error onto your screen
+        st.error(f"🚨 ACTUAL SYSTEM ERROR: {e}")
+        st.stop() 
         return None, None
+    
 
 model, scaler = load_models()
 
