@@ -125,4 +125,5 @@ Dataset Source: UCI Machine Learning Repository / Kaggle Heart Disease Dataset
 📜 License
 
 This project is licensed under the MIT License.
-!Alt(https://github.com/utkarsh695/Heart_disease_prediction/blob/main/Snapshotapp.png)
+
+![Alt text](https://github.com/utkarsh695/Heart_disease_prediction/blob/main/Snapshotapp.png)
