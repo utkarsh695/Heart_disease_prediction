@@ -57,17 +57,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- 3. Load Model and Scaler ---
-@st.cache_resource
-def load_models():
-    try:
-        model = pickle.load(open("heart_model.pkl", "rb"))
-        scaler = pickle.load(open("scaler.pkl", "rb"))
-        return model, scaler
-        except Exception as e:
-        # This will force the actual system error onto your screen
-        st.error(f"🚨 ACTUAL SYSTEM ERROR: {e}")
-        st.stop() 
-        return None, None
+
     
 
 model, scaler = load_models()
@@ -77,7 +67,20 @@ st.sidebar.markdown("<h1 style='color: #E63946; margin-top: 0; font-size: 36px;'
 st.sidebar.markdown("---")
 
 # Navigation Panel
-menu = st.sidebar.radio("📌 Navigation Panel", ["🎛️ Interactive Predictor", "🔬 Deep Dive: Prevention"])
+menu = st.sidebar.radio("# --- 3. Load Model and Scaler ---
+@st.cache_resource
+def load_models():
+    try:
+        # Loading the exact files from GitHub
+        model = pickle.load(open("heart.pkl", "rb"))
+        scaler = pickle.load(open("scaler.pkl", "rb"))
+        return model, scaler
+    except Exception as e:
+        # If it fails, print the exact reason to the screen
+        st.error(f"🚨 ACTUAL SYSTEM ERROR: {e}")
+        st.stop()
+        return None, None📌 Navigation Panel", ["🎛️ Interactive Predictor", "🔬 Deep Dive: Prevention"])
+        
 st.sidebar.markdown("---")
 st.sidebar.caption("© 2026 Utkarsh Verma. Built with Streamlit.")
 
